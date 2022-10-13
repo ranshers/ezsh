@@ -70,45 +70,45 @@ fi
 
 # INSTALL FONTS
 
-echo -e "Installing Nerd Fonts version of Hack, Roboto Mono, DejaVu Sans Mono\n"
+#echo -e "Installing Nerd Fonts version of Hack, Roboto Mono, DejaVu Sans Mono\n"
 
-wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
-wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
-wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+#wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+#wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+#wget -q --show-progress -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
 
-fc-cache -fv ~/.fonts
+#fc-cache -fv ~/.fonts
 
-if [ -d ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k ]; then
-    cd ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k && git pull
-else
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k
-fi
+#if [ -d ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k ]; then
+#    cd ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k && git pull
+#else
+#    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/ezsh/oh-my-zsh/custom/themes/powerlevel10k
+#fi
 
-if [ -d ~/.~/.config/ezsh/fzf ]; then
-    cd ~/.config/ezsh/fzf && git pull
-    ~/.config/ezsh/fzf/install --all --key-bindings --completion --no-update-rc
-else
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/ezsh/fzf
-    ~/.config/ezsh/fzf/install --all --key-bindings --completion --no-update-rc
-fi
+#if [ -d ~/.~/.config/ezsh/fzf ]; then
+#    cd ~/.config/ezsh/fzf && git pull
+#    ~/.config/ezsh/fzf/install --all --key-bindings --completion --no-update-rc
+#else
+#    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/ezsh/fzf
+#    ~/.config/ezsh/fzf/install --all --key-bindings --completion --no-update-rc
+#fi
 
-if [ -d ~/.config/ezsh/oh-my-zsh/custom/plugins/k ]; then
-    cd ~/.config/ezsh/oh-my-zsh/custom/plugins/k && git pull
-else
-    git clone --depth 1 https://github.com/supercrabtree/k ~/.config/ezsh/oh-my-zsh/custom/plugins/k
-fi
+#if [ -d ~/.config/ezsh/oh-my-zsh/custom/plugins/k ]; then
+#    cd ~/.config/ezsh/oh-my-zsh/custom/plugins/k && git pull
+#else
+#    git clone --depth 1 https://github.com/supercrabtree/k ~/.config/ezsh/oh-my-zsh/custom/plugins/k
+#fi
 
-if [ -d ~/.config/ezsh/marker ]; then
-    cd ~/.config/ezsh/marker && git pull
-else
-    git clone --depth 1 https://github.com/jotyGill/marker ~/.config/ezsh/marker
-fi
+#if [ -d ~/.config/ezsh/marker ]; then
+#    cd ~/.config/ezsh/marker && git pull
+#else
+#    git clone --depth 1 https://github.com/jotyGill/marker ~/.config/ezsh/marker
+#fi
 
-if ~/.config/ezsh/marker/install.py; then
-    echo -e "Installed Marker\n"
-else
-    echo -e "Marker Installation Had Issues\n"
-fi
+#if ~/.config/ezsh/marker/install.py; then
+#    echo -e "Installed Marker\n"
+#else
+#    echo -e "Marker Installation Had Issues\n"
+#fi
 
 # if git clone --depth 1 https://github.com/todotxt/todo.txt-cli.git ~/.config/ezsh/todo; then :
 # else
@@ -117,17 +117,17 @@ fi
 # mkdir ~/.config/ezsh/todo/bin ; cp -f ~/.config/ezsh/todo/todo.sh ~/.config/ezsh/todo/bin/todo.sh # cp todo.sh to ./bin so only it is included in $PATH
 # #touch ~/.todo/config     # needs it, otherwise spits error , yeah a bug in todo
 # ln -s ~/.config/ezsh/todo ~/.todo
-if [ ! -L ~/.config/ezsh/todo/bin/todo.sh ]; then
-    echo -e "Installing todo.sh in ~/.config/ezsh/todo\n"
-    mkdir -p ~/.config/ezsh/bin
-    mkdir -p ~/.config/ezsh/todo
-    wget -q --show-progress "https://github.com/todotxt/todo.txt-cli/releases/download/v2.12.0/todo.txt_cli-2.12.0.tar.gz" -P ~/.config/ezsh/
-    tar xvf ~/.config/ezsh/todo.txt_cli-2.12.0.tar.gz -C ~/.config/ezsh/todo --strip 1 && rm ~/.config/ezsh/todo.txt_cli-2.12.0.tar.gz
-    ln -s -f ~/.config/ezsh/todo/todo.sh ~/.config/ezsh/bin/todo.sh     # so only .../bin is included in $PATH
-    ln -s -f ~/.config/ezsh/todo/todo.cfg ~/.todo.cfg     # it expects it there or ~/todo.cfg or ~/.todo/config
-else
-    echo -e "todo.sh is already instlled in ~/.config/ezsh/todo/bin/\n"
-fi
+#if [ ! -L ~/.config/ezsh/todo/bin/todo.sh ]; then
+#    echo -e "Installing todo.sh in ~/.config/ezsh/todo\n"
+#    mkdir -p ~/.config/ezsh/bin
+#    mkdir -p ~/.config/ezsh/todo
+#    wget -q --show-progress "https://github.com/todotxt/todo.txt-cli/releases/download/v2.12.0/todo.txt_cli-2.12.0.tar.gz" -P ~/.config/ezsh/
+#    tar xvf ~/.config/ezsh/todo.txt_cli-2.12.0.tar.gz -C ~/.config/ezsh/todo --strip 1 && rm ~/.config/ezsh/todo.txt_cli-2.12.0.tar.gz
+#    ln -s -f ~/.config/ezsh/todo/todo.sh ~/.config/ezsh/bin/todo.sh     # so only .../bin is included in $PATH
+#    ln -s -f ~/.config/ezsh/todo/todo.cfg ~/.todo.cfg     # it expects it there or ~/todo.cfg or ~/.todo/config
+#else
+#    echo -e "todo.sh is already instlled in ~/.config/ezsh/todo/bin/\n"
+#fi
 
 if [[ $1 == "--cp-hist" ]] || [[ $1 == "-c" ]]; then
     echo -e "\nCopying bash_history to zsh_history\n"
